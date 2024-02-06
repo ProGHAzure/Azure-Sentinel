@@ -14,7 +14,6 @@ on:
     branches: [ master ]
     paths:
     - '**'
-    - '!Sample Data/**' # skip the Sample data folder
     - '!.github/workflows/**'  # this filter prevents other workflow changes from triggering this workflow
     - '.github/workflows/sentinel-deploy-4fb7a97e-a915-4de7-92a4-b41a5343e482.yml'
 
@@ -28,7 +27,7 @@ jobs:
       directory: '${{ github.workspace }}'
       cloudEnv: 'AzureCloud'
       creds: ${{ secrets.AZURE_SENTINEL_CREDENTIALS_4fb7a97ea9154de792a4b41a5343e482 }}
-      contentTypes: 'AnalyticsRule,AutomationRule,HuntingQuery,Parser,Playbook,Workbook'
+      contentTypes: 'AnalyticsRule'
       branch: 'master'
       sourceControlId: '4fb7a97e-a915-4de7-92a4-b41a5343e482'
       rootDirectory: '${{ github.workspace }}'
